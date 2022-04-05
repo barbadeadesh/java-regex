@@ -27,9 +27,29 @@ public class Regex {
 		}
 	}
 
+	/**
+	 * Create Add Last Name method for getting First Name By Using Expression
+	 */
+
+	public static void AddLastName() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a Last Name: ");
+		String name = sc.nextLine();
+		System.out.println("Last Name is: " + name);
+		Pattern pattern = Pattern.compile("^([A-Z]{1})([a-z A-Z]{2,})$");
+		Matcher matcher = pattern.matcher(name);
+		boolean MatchFound = matcher.matches();
+		if (MatchFound) {
+			System.out.println("Last Name is valid");
+		} else {
+			System.out.println("Last Name is Invalid");
+		}
+	}
+
 	public static void main(String[] args) {
 		System.out.println("Wlcome To The Regex");
 		AddFirstName();
+		AddLastName();
 
 	}
 
